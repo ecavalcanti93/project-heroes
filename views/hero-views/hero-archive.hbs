@@ -1,0 +1,18 @@
+ <div class="heroes-list">
+ 
+      <h1>Our Heroes</h1>
+    <div class="box-archive">
+      <ul>
+        {{#each heroes}}
+        <li>
+          <a href="/heroes/{{ id }}" class="herolist">
+            <img src="{{ image }}" alt="{{ name }} Profile Image" class="hero-image">
+          </a>
+        </li>
+        {{/each}}
+      </ul>
+
+    </div>
+
+
+</div>

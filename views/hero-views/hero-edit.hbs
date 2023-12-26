@@ -1,0 +1,48 @@
+<div id="container">
+
+  <div id="center-container">
+
+
+      <form id="login" action="/heroes/{{id}}/edit" method="post" enctype="multipart/form-data"> {{!-- !!! --}}
+
+      <h3>Edit: {{name}}</h3> 
+  <label> Name:
+              <input type="text" name="name" value="{{name}}" />
+          </label>
+
+          <label> Gender:
+              <input type="text" name="gender" value="{{gender}}" />
+          </label>
+
+          <label> Specie:
+              <input type="text" name="specie" value="{{specie}}" />
+          </label>
+
+          <label> Origin:
+              <input type="text" name="origin" value="{{origin}}" />
+          </label>
+
+          <label> Affiliation:
+              <input type="text" name="affiliation" value="{{affiliation}}" />
+          </label>    
+
+          <label> Abilities:
+              <textarea name="abilities" cols="30" rows="4" class="text-abilities">{{abilitites}}</textarea>
+          </label>
+
+          <label> Image:
+              <input type="file" name='hero-cover-image'/>
+          </label>
+
+          {{#if imageUrl }}       
+            <a href="/heroes/{{id}}/delete-image">Eliminar Imagen</a>
+          {{/if}}
+        <button type="submit">Update</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+  </div>
+</div>

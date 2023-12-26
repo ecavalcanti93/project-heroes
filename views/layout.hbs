@@ -1,0 +1,36 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Find a Hero!</title>
+    <link rel="icon" class="flavicon" href="/images/flav.png"/>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+
+        <nav class="sitenav">
+      <ul class="menu">
+        <li><a href='/'>Home</a></li>
+        <li><a href='/heroes'>Heroes</a></li>
+        {{#if user}}
+        <li><a href='/heroes/create'>Create</a></li>
+        <li><a href='/heroes/{{_id}}'>Profile</a></li> 
+        {{/if}}
+          {{#unless user}}    
+        <li><a class="button-signup" href='/auth/login'>Login</a></li>
+        <li><a class="button-signup" href='/auth/signup'>Sign Up</a></li>
+          {{else}}
+        <li><a class="button-signup" href='/auth/logout'>Log Out</a></li>
+          {{/unless}}
+      </ul>
+    </nav>
+
+    {{{body}}}
+
+    <script src="/js/script.js"></script>
+  </body>
+
+</html>
