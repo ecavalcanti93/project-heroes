@@ -1,17 +1,17 @@
 <div class="box-profile">
 
 <div class="profile1">
-    <img src="{{ image }}" class="img-fluid" alt="">
+    <img src="{{ heroFromDB.image }}" class="img-fluid" alt="">
 </div>
 
 <div class="profile2">
     <ul>
-    <li><h1>#{{ name }}</h1></li>
-    <li><h2>{{ affiliation }}</li>
-    <li>{{ specie }}</li>
-    <li>{{ gender }}</li>
-    <li>{{ origin }}</li>
-    <li>{{ abilities }}</li>
+    <li><h1>#{{ heroFromDB.name }}</h1></li>
+    <li><h2>{{ heroFromDB.affiliation }}</li>
+    <li>{{ heroFromDB.specie }}</li>
+    <li>{{ heroFromDB.gender }}</li>
+    <li>{{ heroFromDB.origin }}</li>
+    <li>{{ heroFromDB.abilities }}</li>
     {{#unless user}} 
 <button onclick="myalert()">Ask</button>
     <script>
@@ -28,42 +28,15 @@
                 "Click OK to share your location to facilitate the meeting!");
         }
     </script>
+    {{#if canDelete}}
  <button><a href="/heroes/{{id}}/delete">Delete</a></button>
  <button><a href="/heroes/{{id}}/edit">Edit</a></button>
+ {{/if}}
  {{/unless}}
     </ul>
 </div>
 </div>
 
-<img src=""/>
-<div class="voting">
-    <button id="likebtn">
-<i class="fa fa-thumbs-up" style="font-size:20px"></i>
-    </button>
-    <input type="number" id="input1" value="0">
 
-    <button id="dislikebtn">
-        <i class="fa fa-thumbs-down" style="font-size:20px"></i>
-    </button>
-    <input type="number" id="input2" value="0">
-
-</div>
-    </div>
-
-    <script type="text/javascript">
-        let likebtn = document.querySelector('#likebtn');
-        let dislikebtn = document.querySelector('#dislikebtn');
-        let input1 = document.querySelector('#input1');
-        let input2 = document.querySelector('#input2');
-
-        likebtn.addEventListener('click', ()=> {
-            input1.value = parseInt(input1.value) + 1;
-        })
-
-        dislikebtn.addEventListener('click', ()=> {
-            input2.value = parseInt(input2.value) + 1;
-        })
-
-    </script>
 
 </div>

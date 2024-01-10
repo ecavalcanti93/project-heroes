@@ -33,6 +33,9 @@ const heroSchema = new Schema(
       type: String,
       default: defaultImageURL
     },
+    author: {
+      type: Schema.Types.ObjectId, ref: "User"
+    }
   },
     {timestamps: true}
   );

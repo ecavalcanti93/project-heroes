@@ -19,6 +19,7 @@ router.get('/create', isLoggedIn, (req, res) => {
 
 router.post('/create', fileUploader.single('hero-cover-image'), (req, res) => {
   
+  const user_id = req.session.currentUser._id;
   const {name, gender, specie, origin, affiliation, abilities} = req.body;
   
   const newHero = {
@@ -28,6 +29,7 @@ router.post('/create', fileUploader.single('hero-cover-image'), (req, res) => {
     origin: origin,
     affiliation: affiliation,
     abilities: abilities,
+    author: user_id
   }
 
   if (req.file) {
@@ -49,7 +51,9 @@ router.get('/:id', (req, res) => {
 
   Hero.findById(id)
     .then( heroFromDB => {
-      res.render('hero-views/hero-single', heroFromDB );
+        const canDelete = heroFromDB.author?.toString() === req.session.currentUser?._id
+      //console.log(heroFromDB.author?.toString() === req.session.currentUser._id)
+      res.render('hero-views/hero-single', {heroFromDB, canDelete} );
     });
 
 });
