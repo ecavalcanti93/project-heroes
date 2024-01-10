@@ -17,7 +17,7 @@
         <li><a href='/heroes'>Heroes</a></li>
         {{#if user}}
         <li><a href='/heroes/create'>Create</a></li>
-        <li><a href='/heroes/{{_id}}'>Profile</a></li> 
+        <li><a href="/auth/my-profile">Profile</a></li> 
         {{/if}}
           {{#unless user}}    
         <li><a class="button-signup" href='/auth/login'>Login</a></li>

@@ -1,0 +1,23 @@
+{{currentUser.image}}
+
+<div class="box-profile">
+
+<div class="profile1">
+    <img src="{{ image }}" class="img-fluid" alt="">
+</div>
+
+<div class="profile2">
+    <ul>
+    <img src="/images/Logo.png" alt="logo" class="image-logo">
+    <li><h2>Welcome Mr/Ms. <br>{{ currentUser.username }}</h2></li>
+    <p>You have been registered with <br>{{currentUser.email}}</p>
+    <li><h2>{{ heroFromDB.affiliation }}</li>
+    <li>{{ currentUser.image }}</li>
+    <li>{{ currentUser.gender }}</li>
+    <li>{{ currentUser.origin }}</li>
+    <li>{{ currentUser.abilities }}</li>
+    </ul>
+</div>
+</div>
+
+</div>

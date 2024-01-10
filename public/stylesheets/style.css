@@ -245,7 +245,7 @@ h3{
 }
 
 .profile2 ul li h2{
-  font-size: 20px;
+  font-size: 30px;
   color: black;
 }
 
@@ -259,11 +259,11 @@ h3{
   background-color: #F522C1;
   width: 40%;
   height: 400px;
+  padding: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 50px;
   box-sizing: border-box;
 }
 
@@ -416,3 +416,7 @@ h3{
   width: 750px;
 }
 
+.image-logo{
+  width: 75px;
+  height: 75px;
+}
