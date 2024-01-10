@@ -29,8 +29,8 @@
         }
     </script>
     {{#if canDelete}}
- <button><a href="/heroes/{{id}}/delete">Delete</a></button>
- <button><a href="/heroes/{{id}}/edit">Edit</a></button>
+ <button><a href="/heroes/{{heroFromDB._id}}/delete">Delete</a></button>
+ <button><a href="/heroes/{{heroFromDB._id}}/edit">Edit</a></button>
  {{/if}}
  {{/unless}}
     </ul>
