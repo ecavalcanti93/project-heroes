@@ -5,32 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Find a Hero!</title>
-    <link rel="icon" class="flavicon" href="/images/flav.png"/>
+    {{!-- <script src="https://cdn.tailwindcss.com"></script> --}}
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="icon" class="flavicon" href="/images/flav2.png"/>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
-  <body>
+  <body class="h-dvh mt-auto grid grid-rows-[auto_1fr_auto]">
 
-        <nav class="sitenav">
-      <ul class="menu">
-        <li><a href='/'>Home</a></li>
-        <li><a href='/heroes'>Heroes</a></li>
-        {{#if user}}
-        <li><a href='/heroes/create'>Create</a></li>
-        <li><a href="/auth/my-profile">Profile</a></li> 
-        {{/if}}
-          {{#unless user}}    
-        <li><a class="button-signup" href='/auth/login'>Login</a></li>
-        <li><a class="button-signup" href='/auth/signup'>Sign Up</a></li>
-          {{else}}
-        <li><a class="button-signup" href='/auth/logout'>Log Out</a></li>
-          {{/unless}}
-      </ul>
+<div class="w-full bg-rose-600 sticky top-0">
+    <nav class="flex mx-auto max-w-screen-lg items-center justify-between top-0 h-16">
+        <button id="menu-button" class="absolute right-7 sm:hidden">
+            <img src="/images/Menu.png" alt="Menu Hamburguer" class="h-6 cursor-pointer" />
+        </button>
+        <a href='/'><img src="/images/Logo_Horizontal.png" class="h-12 pl-5 w-auto cursor-pointer" alt="Logo"></a>
+    
+        <ul id="nav-menu" class="absolute top-0 ml-auto hidden items-center h-dvh w-dvw flex-col justify-between bg-rose-600 p-20 text-center text-2xl font-bold text-lime-500 sm:static sm:flex sm:h-auto sm:w-1/2 sm:flex-row sm:justify-end sm:gap-5 sm:bg-transparent sm:px-0 sm:text-left sm:text-sm sm:text-lime-500">
+            <li class="sm:hidden">
+                <a href='/'><img src="/images/Logo_Horizontal.png" class="h-12" id="main-title" alt="Logo FaH"></a>
+            </li>
+            <li>
+                <a href='/'>Home</a>
+            </li>
+            <li>
+                <a href='/heroes'>Heroes</a>
+            </li>
+            {{#if user}}
+            <li>
+                <a href='/heroes/create'>Create</a>
+            </li>
+            <li>
+                <a href="/auth/my-profile">Profile</a>
+            </li>
+            {{/if}}
+            {{#unless user}}   
+            <li>
+                <a class="bg-lime-500 text-rose-600 pt-2 pb-2 pl-4 pr-4 rounded-full cursor-pointer" href='/auth/login'>Login</a>
+            </li>
+            <li>
+                <a class="bg-lime-500 text-rose-600 pt-2 pb-2 pl-4 pr-4 rounded-full cursor-pointer" href='/auth/signup'>Sign Up</a>
+            </li>
+            <li class="sm:hidden">
+                <button id="close-menu">
+                <svg class="h-8 w-8 text-lime-500 cursor-pointer"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" />  <line x1="15" y1="9" x2="9" y2="15" />  <line x1="9" y1="9" x2="15" y2="15" /></svg>
+                </button>
+            </li>
+            {{else}}
+            <li>
+                <a class="bg-lime-500 text-rose-600 pt-2 pb-2 pl-4 pr-4 rounded-full cursor-pointer" href='/auth/logout'>Log Out</a>
+            </li>
+            <li class="sm:hidden">
+                <button id="close-menu">
+                <svg class="h-8 w-8 text-lime-500 cursor-pointer"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" />  <line x1="15" y1="9" x2="9" y2="15" />  <line x1="9" y1="9" x2="15" y2="15" /></svg>
+                </button>
+            </li>
+            {{/unless}}
+        </ul>
     </nav>
+</div>
+  
+    <div class="flex flex-col items-center justify-center text-center">
+        {{{body}}}
+    </div>
 
-    {{{body}}}
+    <footer class="mt-auto pt-4 pb-4 pr-5 pl-5 bg-rose-600">
+        <p class="text-center text-lime-500">© 2025 Find a Hero</p>
+    </footer>
 
     <script src="/js/script.js"></script>
+    <script src="/js/navigation.js"></script>
   </body>
 
 </html>

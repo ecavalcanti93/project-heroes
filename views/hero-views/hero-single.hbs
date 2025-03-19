@@ -1,42 +1,39 @@
-<div class="box-profile">
+<div>
+<div class="mx-auto max-w-screen-lg w-80 p-5 mt-10 mb-10 bg-rose-600">
+    <div>
+        <img src="{{ heroFromDB.image }}" class="w-full h-75 object-cover" alt="Hero Image">
+        <ul class="pt-10 text-start text-white">
+            <li><h2 class="text-4xl font-bold text-lime-500 ">#{{ heroFromDB.name }}</h2></li>
+            <li class="text-2xl font-bold text-sky-600">{{ heroFromDB.affiliation }}</li>
+            <li>{{ heroFromDB.specie }}</li>
+            <li>{{ heroFromDB.gender }}</li>
+            <li>{{ heroFromDB.origin }}</li>
+            <li>{{ heroFromDB.abilities }}</li>
+        </ul>
+    </div>
 
-<div class="profile1">
-    <img src="{{ heroFromDB.image }}" class="img-fluid" alt="">
-</div>
+    <div class="mt-5">
+        {{#unless user}}
+        <button class="bg-lime-500 text-rose-600 p-2 cursor-pointer " onclick="myalert()">Ask</button>
+        {{else}}
+        <button class="bg-lime-500 p-2 cursor-pointer text-rose-600" onclick="myalert()">Meeting</button>
 
-<div class="profile2">
-    <ul>
-    <li><h1>#{{ heroFromDB.name }}</h1></li>
-    <li><h2>{{ heroFromDB.affiliation }}</li>
-    <li>{{ heroFromDB.specie }}</li>
-    <li>{{ heroFromDB.gender }}</li>
-    <li>{{ heroFromDB.origin }}</li>
-    <li>{{ heroFromDB.abilities }}</li>
-    {{#unless user}} 
-<button onclick="myalert()">Ask</button>
-    <script>
-        function myalert() {
-            alert("The hero is on the way!\n " +
-                "Click OK to share your location to facilitate the meeting!");
-        }
-    </script>
-    {{else}}
-<button onclick="myalert()">Meeting</button>
-    <script>
-        function myalert() {
-            alert("The hero is on the way!\n " +
-                "Click OK to share your location to facilitate the meeting!");
-        }
-    </script>
-    {{#if canDelete}}
- <button><a href="/heroes/{{heroFromDB._id}}/delete">Delete</a></button>
- <button><a href="/heroes/{{heroFromDB._id}}/edit">Edit</a></button>
- {{/if}}
- {{/unless}}
-    </ul>
+        {{#if canDelete}}
+        <button class="bg-lime-500 p-2 cursor-pointer text-rose-600">
+            <a href="/heroes/{{heroFromDB._id}}/delete">Delete</a>
+        </button>
+        <button class="bg-lime-500 p-2 cursor-pointer text-rose-600">
+            <a href="/heroes/{{heroFromDB._id}}/edit">Edit</a>
+        </button>
+        {{/if}}
+        {{/unless}}
+    </div>
 </div>
 </div>
 
 
-
-</div>
+<script>
+    function myalert() {
+        alert("The hero is on the way!\nClick OK to share your location to facilitate the meeting!");
+    }
+</script>

@@ -1,0 +1,24 @@
+/* @import "tailwindcss";
+
+body {
+  background-image: url('/images/bg.jpg');
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+} */
+
+.home1{
+  background-image: url('/images/maskedman.png');
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: top;  
+  background-color: #F522C1;
+  width: 300px;
+  height: 350px;
+  border-radius: 10px;
+  cursor: pointer;
+  }
+
+
+/* @theme{
+    --color-neonGreen: #47F522;
+    --color-neonPink: #F522C1;
+} */

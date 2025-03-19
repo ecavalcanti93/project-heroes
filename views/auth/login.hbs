@@ -1,37 +1,30 @@
-<div id="container">
-
-  <div id="center-container">
+<div class="mx-auto max-w-screen-lg w-80 p-5 mt-10 mb-10 bg-rose-600 flex flex-col lg:w-100 sm:w-2/5">
     
-    <form id="login" action="/auth/login" method="POST">
+    <form action="/auth/login" method="POST" class="flex flex-col gap-5">
 
-      <label> Username
-        <input type="text" name="username" placeholder="Your username" />
+      <label class="flex flex-col text-lime-500"> Username:
+        <input type="text" name="username" placeholder="Your username" class="bg-white p-2 text-slate-500" />
       </label>
 
-      <label> Email
-        <input type="email" name="email" placeholder="Your email" />
+      <label class="flex flex-col text-lime-500"> Email:
+        <input type="email" name="email" placeholder="Your email" class="bg-white p-2 text-slate-500"/>
       </label>
 
-      <label> Password
-        <input type="password" name="password" placeholder="Your password" />
+      <label class="flex flex-col text-lime-500"> Password:
+        <input type="password" name="password" placeholder="Your password" class="bg-white p-2 text-slate-500" />
       </label>
 
-      <button type="submit">Log In</button>
+      <button type="submit" class="bg-lime-500 p-2 cursor-pointer text-rose-600">Log In</button>
 
-      <div id="footer-box">
-        <div class="titulo">
+      <div class="flex flex-col justify-center items-center">
           Welcome!
-        </div>
-        <hr>
-        <div class="titulo">
+        <hr class="w-50 bg-white border-1">
         <p>Don't have an account?</p>
-          <a href="/signup"><button>Register</button></a>
-        </div>
-      </div>
+          <a href="../auth/signup" class="text-lime-500 cursor-pointer">Register</a>
+          </div>
 
       {{#if errorMessage}}
         <p class="error">{{errorMessage}}</p>
       {{/if}}
     </form>
   </div>
-</div>

@@ -1,43 +1,39 @@
-<div id="container">
-
-  <div id="center-container">
+  <div class="mx-auto max-w-screen-lg w-80 p-5 mt-10 mb-10 bg-rose-600 flex flex-col lg:w-100 sm:w-2/5">
     
-
-    <form id="login" action="/heroes/create" method="post" enctype="multipart/form-data"> {{!-- !!! --}}
+    <form id="login" action="/heroes/create" method="post" enctype="multipart/form-data" class="flex flex-col gap-5"> {{!-- !!! --}}
         
-        <h3>Create your profile</h3>
+        <h1 class="text-center text-2xl text-lime-500 font-bold">Create your profile</h1>
         
         <input type="hidden" name="id" value="{{ id }}">
-        <label> Name:
-            <input type="text" name="name" value="{{name}}" />
+        <label class="flex flex-col text-lime-500"> Name:
+            <input type="text" name="name" value="{{name}}" class="bg-white p-2 text-slate-500"/>
         </label>
 
-        <label> Gender:
-            <input type="text" name="gender" value="{{gender}}" />
+        <label class="flex flex-col text-lime-500"> Gender:
+            <input type="text" name="gender" value="{{gender}}" class="bg-white p-2 text-slate-500"/>
         </label>
 
-        <label> Specie:
-            <input type="text" name="specie" value="{{specie}}" />
+        <label class="flex flex-col text-lime-500"> Specie:
+            <input type="text" name="specie" value="{{specie}}" class="bg-white p-2 text-slate-500"/>
         </label>
 
-        <label> Origin:
-            <input type="text" name="origin" value="{{origin}}" />
+        <label class="flex flex-col text-lime-500"> Origin:
+            <input type="text" name="origin" value="{{origin}}" class="bg-white p-2 text-slate-500"/>
         </label>
 
-        <label> Affiliation:
-            <input type="text" name="affiliation" value="{{affiliation}}" />
+        <label class="flex flex-col text-lime-500"> Affiliation:
+            <input type="text" name="affiliation" value="{{affiliation}}" class="bg-white p-2 text-slate-500"/>
         </label>    
 
-        <label> Abilities:
-            <textarea name="abilities" cols="30" rows="4" class="text-abilities">{{abilities}}</textarea>
+        <label class="flex flex-col text-lime-500"> Abilities:
+            <textarea name="abilities" cols="30" rows="4" class="bg-white p-2 text-slate-500">{{abilities}}</textarea>
         </label>
 
-        <label>
-            <input type="file" name='hero-cover-image'/>
+        <label class="bg-white border-2 border-dashed">
+            <input type="file" name='hero-cover-image'  class="text-rose-600 truncate p-2 cursor-pointer"/>
         </label>
 
-        <button type="submit">Create</button>
+        <button type="submit" class="bg-lime-500 p-2 cursor-pointer text-rose-600">Create</button>
     </form>
     
   </div>
-</div>
